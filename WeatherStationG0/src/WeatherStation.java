@@ -22,6 +22,8 @@ public class WeatherStation implements Runnable {
     private final KelvinTempSensor sensor ; // Temperature sensor.
 
     private final long PERIOD = 1000 ;      // 1 sec = 1000 ms.
+    
+    int reading ;   // actual sensor reading.
 
     /*
      * When a WeatherStation object is created, it in turn creates the sensor
@@ -37,7 +39,7 @@ public class WeatherStation implements Runnable {
      * its sensor, and reports this as a formatted output string.
      */
     public void run() {
-        int reading ;           // actual sensor reading.
+        
         double celsius ;        // sensor reading transformed to celsius
         final int KTOC = -27315 ;   // Convert raw Kelvin reading to Celsius
 
